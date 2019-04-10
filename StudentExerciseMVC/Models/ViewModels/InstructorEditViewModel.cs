@@ -7,9 +7,9 @@ using StudentExerciseMVC.Models;
 
 namespace StudentExerciseMVC.Models.ViewModels
 {
-    public class StudentEditViewModel
+    public class InstructorEditViewModel
     {
-        public Student Student { get; set; }
+        public Instructor Instructor { get; set; }
         public List<cohort> Cohorts { get; set; }
         public List<SelectListItem> CohortOptions
         {

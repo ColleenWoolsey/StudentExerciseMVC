@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace StudentExerciseMVC.Models.ViewModels
 {
-    public class StudentCreateViewModel
+    public class InstructorCreateViewModel
     {
-        public StudentCreateViewModel()
+        public InstructorCreateViewModel()
         {
             Cohorts = new List<cohort>();
         }
 
-        public StudentCreateViewModel(string connectionString)
+        public InstructorCreateViewModel(string connectionString)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -41,7 +41,7 @@ namespace StudentExerciseMVC.Models.ViewModels
         }
 
 
-        public Student Student { get; set; }
+        public Instructor Instructor { get; set; }
         public List<cohort> Cohorts { get; set; }
 
         public List<SelectListItem> CohortOptions
