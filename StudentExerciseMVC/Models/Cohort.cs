@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudentExerciseMVC.Models
 {
-    public class cohort
+    public class Cohort
     {
         public int Id { get; set; }
        

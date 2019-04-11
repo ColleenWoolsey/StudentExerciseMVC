@@ -10,7 +10,7 @@ namespace StudentExerciseMVC.Models.ViewModels
     public class StudentEditViewModel
     {
         public Student Student { get; set; }
-        public List<cohort> Cohorts { get; set; }
+        public List<Cohort> Cohorts { get; set; }
         public List<SelectListItem> CohortOptions
         {
             get

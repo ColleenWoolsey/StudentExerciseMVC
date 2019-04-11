@@ -9,6 +9,6 @@ namespace StudentExerciseMVC.Models.ViewModels
     public class CohortEditViewModel
     {
         public string CohortName { get; set; }
-        public cohort Cohort { get; internal set; }
+        public Cohort Cohort { get; internal set; }
     }
 }
