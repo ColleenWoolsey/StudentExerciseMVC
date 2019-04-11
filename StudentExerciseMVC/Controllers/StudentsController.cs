@@ -60,7 +60,7 @@ namespace StudentExerciseMVC.Controllers
                             StudentLastName = reader.GetString(reader.GetOrdinal("StudentLastName")),
                             StudentSlackHandle = reader.GetString(reader.GetOrdinal("StudentSlackHandle")),
                             CohortId = reader.GetInt32(reader.GetOrdinal("CohortId")),
-                            Cohort = new cohort
+                            Cohort = new Cohort
                             {
                                 Id = reader.GetInt32(reader.GetOrdinal("CohortId")),
                                 CohortName = reader.GetString(reader.GetOrdinal("CohortName"))
@@ -111,7 +111,7 @@ namespace StudentExerciseMVC.Controllers
                             StudentLastName = reader.GetString(reader.GetOrdinal("StudentLastName")),
                             StudentSlackHandle = reader.GetString(reader.GetOrdinal("StudentSlackHandle")),
                             CohortId = reader.GetInt32(reader.GetOrdinal("CohortId")),
-                            Cohort = new cohort
+                            Cohort = new Cohort
                             {
                                 Id = reader.GetInt32(reader.GetOrdinal("CohortId")),
                                 CohortName = reader.GetString(reader.GetOrdinal("CohortName"))
@@ -312,7 +312,7 @@ namespace StudentExerciseMVC.Controllers
                             StudentLastName = reader.GetString(reader.GetOrdinal("StudentLastName")),
                             StudentSlackHandle = reader.GetString(reader.GetOrdinal("StudentSlackHandle")),
                             CohortId = reader.GetInt32(reader.GetOrdinal("CohortId")),
-                            Cohort = new cohort
+                            Cohort = new Cohort
                             {
                                 Id = reader.GetInt32(reader.GetOrdinal("CohortId")),
                                 CohortName = reader.GetString(reader.GetOrdinal("CohortName")),
@@ -331,7 +331,7 @@ namespace StudentExerciseMVC.Controllers
         //    ***********************************
         //              GetAllCohorts()
         //    ***********************************
-        private List<cohort> GetAllCohorts()
+        private List<Cohort> GetAllCohorts()
         {
             using (SqlConnection conn = Connection)
             {
@@ -341,11 +341,11 @@ namespace StudentExerciseMVC.Controllers
                     cmd.CommandText = @"SELECT Id, Cohortname from Cohort;";
                     SqlDataReader reader = cmd.ExecuteReader();
 
-                    List<cohort> cohorts = new List<cohort>();
+                    List<Cohort> cohorts = new List<Cohort>();
 
                     while (reader.Read())
                     {
-                        cohorts.Add(new cohort
+                        cohorts.Add(new Cohort
                         {
                             Id = reader.GetInt32(reader.GetOrdinal("Id")),
                             CohortName = reader.GetString(reader.GetOrdinal("CohortName"))

@@ -44,11 +44,11 @@ namespace StudentExerciseMVC.Controllers
                                             FROM Cohort c";
                     SqlDataReader reader = cmd.ExecuteReader();
 
-                    List<cohort> cohorts = new List<cohort>();
+                    List<Cohort> cohorts = new List<Cohort>();
 
                     while (reader.Read())
                     {
-                        cohort cohort = new cohort
+                        Cohort cohort = new Cohort
                         {
                             Id = reader.GetInt32(reader.GetOrdinal("Id")),
                             CohortName = reader.GetString(reader.GetOrdinal("CohortName"))
@@ -91,13 +91,13 @@ namespace StudentExerciseMVC.Controllers
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
-                    cohort cohort = null;
+                    Cohort cohort = null;
 
                     while (reader.Read())
                     {
                         if (cohort == null)
                         {
-                            cohort = new cohort
+                            cohort = new Cohort
                             {
                                 Id = reader.GetInt32(reader.GetOrdinal("Id")),
                                 CohortName = reader.GetString(reader.GetOrdinal("CohortName"))
@@ -189,15 +189,14 @@ namespace StudentExerciseMVC.Controllers
         // *********************************
         public ActionResult Edit(int id)
         {
-            cohort cohort = GetCohortById(id);
+            Cohort cohort = GetCohortById(id);
             if (cohort == null)
             {
                 return NotFound();
             }
             CohortEditViewModel viewModel = new CohortEditViewModel
             {
-                 CohortName = cohort.CohortName
-                // Cohort = cohort
+                Cohort = cohort
             };
 
             return View(viewModel);
@@ -218,7 +217,7 @@ namespace StudentExerciseMVC.Controllers
                     using (SqlCommand cmd = conn.CreateCommand())
                     {
                         cmd.CommandText = @"UPDATE Cohort 
-                                           SET Name = @cohortName 
+                                           SET CohortName = @cohortName 
                                            WHERE id = @id;";
                         cmd.Parameters.Add(new SqlParameter("@cohortName", viewModel.CohortName));
                         cmd.Parameters.Add(new SqlParameter("@id", id));
@@ -241,7 +240,7 @@ namespace StudentExerciseMVC.Controllers
         // *********************************
         public ActionResult Delete(int id)
         {
-            cohort cohort = GetCohortById(id);
+            Cohort cohort = GetCohortById(id);
 
             CohortDeleteViewModel viewModel = new CohortDeleteViewModel
             {
@@ -279,7 +278,7 @@ namespace StudentExerciseMVC.Controllers
             }
         }
 
-        private cohort GetCohortById(int id)
+        private Cohort GetCohortById(int id)
         {
             using (SqlConnection conn = Connection)
             {
@@ -290,11 +289,11 @@ namespace StudentExerciseMVC.Controllers
                                         WHERE Id = @id";
                     cmd.Parameters.Add(new SqlParameter("@id", id));
                     SqlDataReader reader = cmd.ExecuteReader();
-                    cohort cohort = null;
+                    Cohort cohort = null;
 
                     while (reader.Read())
                     {
-                        cohort = new cohort()
+                        cohort = new Cohort()
                         {
                             Id = reader.GetInt32(reader.GetOrdinal("Id")),
                             CohortName = reader.GetString(reader.GetOrdinal("CohortName"))
