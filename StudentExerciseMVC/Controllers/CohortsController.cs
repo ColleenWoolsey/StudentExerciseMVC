@@ -28,16 +28,78 @@ namespace StudentExerciseMVC.Controllers
             }
         }
 
-        // *******************************
-                // GET: Cohorts
-        // *******************************
+        // *********************************************
+        // GET: Cohorts WITH Students - This is somewhat
+        //  irrelevant as the list needs to go in detail
+        //  But practice for dictionary
+        // *********************************************
+
+        //[HttpGet]
+        //public ActionResult Index()
+        //{
+        //    using (SqlConnection conn = Connection)
+        //    {
+        //        conn.Open();
+        //        using (SqlCommand cmd = conn.CreateCommand())
+        //        {
+        //            cmd.CommandText = @"SELECT c.Id AS CohortId, 
+        //                                       c.CohortName, 
+        //                                       s.Id AS StudentId, 
+        //                                       s.StudentFirstname, 
+        //                                       s.StudentLastName,
+        //                                       s.StudentSlackHandle
+        //                                FROM Cohort c 
+        //                                LEFT JOIN Student s ON c.Id = s.Cohortid";                
+
+        //            SqlDataReader reader = cmd.ExecuteReader();
+
+        //            Dictionary<int, Cohort> DictWithStudents = new Dictionary<int, Cohort>();
+
+        //            while (reader.Read())
+        //            {
+        //                int cohortId = reader.GetInt32(reader.GetOrdinal("cohortId"));
+
+        //                if (!DictWithStudents.ContainsKey(cohortId))
+        //                {
+        //                    Cohort newCohort = new Cohort
+        //                    {
+        //                        Id = reader.GetInt32(reader.GetOrdinal("cohortId")),
+        //                        CohortName = reader.GetString(reader.GetOrdinal("CohortName"))
+        //                    };
+
+        //                    DictWithStudents.Add(cohortId, newCohort);
+        //                }
+
+        //                if (!reader.IsDBNull(reader.GetOrdinal("StudentId")))
+        //                {
+        //                    Cohort currentDepartment = DictWithStudents[cohortId];
+        //                    currentDepartment.ListofStudents.Add(
+        //                        new Student
+        //                        {
+        //                            Id = reader.GetInt32(reader.GetOrdinal("StudentId")),
+        //                            StudentFirstName = reader.GetString(reader.GetOrdinal("StudentFirstName")),
+        //                            StudentLastName = reader.GetString(reader.GetOrdinal("StudentLastName")),
+        //                            StudentSlackHandle = reader.GetString(reader.GetOrdinal("StudentSlackHandle"))
+        //                        }
+        //                    );
+        //                }                       
+        //            }
+        //            reader.Close();
+        //            return View(DictWithStudents.Values.ToList());
+        //        }
+        //    }
+        //}
+        // *****************************************
+        //      COHORT LIST WITHOUT STUDENTS    
+        // *****************************************
+
+        [HttpGet]
         public ActionResult Index()
         {
-
             using (SqlConnection conn = Connection)
             {
                 conn.Open();
-                using (SqlCommand cmd = conn.CreateCommand())
+               using (SqlCommand cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"SELECT c.Id,
                                             c.CohortName
@@ -111,7 +173,7 @@ namespace StudentExerciseMVC.Controllers
                                 }
                             );                            
                         }
-
+                        // ADDING BOTH LISTS CAUSES DUPLICATE RECORDS
                         //i.id AS InstructorId, 
                         //i.InstructorFirstName,
                         //i.InstructorLastName,
