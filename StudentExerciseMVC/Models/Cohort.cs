@@ -17,8 +17,10 @@ namespace StudentExerciseMVC.Models
         // [RegularExpression(@"(\bday\b|\bDay\b|\bevening\b|\bEvening\b)\s(\b\d{1,2})")]
         public string CohortName { get; set; }
 
+        [Display(Name = "Students in Cohort")]
         public List<Student> ListofStudents { get; set; } = new List<Student>();
 
+        [Display(Name = "Instructors in Cohort")]
         public List<Instructor> ListofInstructors { get; set; } = new List<Instructor>();       
     }
 }
