@@ -4,12 +4,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace StudentExerciseMVC.Models
+namespace StudentExerciseMVC.Models.ViewModels
 {
-    public class Exercise
+    public class ExerciseCreateViewModel
     {
-        public int Id { get; set; }
-
         [Required(ErrorMessage = "Enter the Exercise Name.")]
         [Display(Name = "Exericise Name")]
         public string ExerciseName { get; set; }

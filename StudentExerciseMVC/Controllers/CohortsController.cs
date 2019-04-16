@@ -241,6 +241,7 @@ namespace StudentExerciseMVC.Controllers
         // *********************************
         //      GET: Cohorts/Edit/5
         // *********************************
+
         public ActionResult Edit(int id)
         {
             Cohort cohort = GetCohortById(id);
@@ -250,7 +251,7 @@ namespace StudentExerciseMVC.Controllers
             }
             CohortEditViewModel viewModel = new CohortEditViewModel
             {
-                Cohort = cohort
+                CohortName = cohort.CohortName
             };
             return View(viewModel);            
         }
@@ -271,6 +272,7 @@ namespace StudentExerciseMVC.Controllers
                         cmd.CommandText = @"UPDATE Cohort 
                                            SET CohortName = @cohortName 
                                            WHERE id = @id;";
+
                         cmd.Parameters.Add(new SqlParameter("@cohortName", viewModel.CohortName));
                         cmd.Parameters.Add(new SqlParameter("@id", id));
 
@@ -336,8 +338,7 @@ namespace StudentExerciseMVC.Controllers
                 conn.Open();
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = @"SELECT Id, CohortName FROM Cohort
-                                        WHERE Id = @id";
+                    cmd.CommandText = @"SELECT Id, CohortName FROM Cohort WHERE Id = @id";
                     cmd.Parameters.Add(new SqlParameter("@id", id));
                     SqlDataReader reader = cmd.ExecuteReader();
                     Cohort cohort = null;

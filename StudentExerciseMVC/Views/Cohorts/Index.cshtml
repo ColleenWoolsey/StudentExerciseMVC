@@ -27,7 +27,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
-            <td>                
+            <td>
                 @Html.ActionLink(($"{item.CohortName}"), "Details", new { id = item.Id })
             </td>
         </tr>
