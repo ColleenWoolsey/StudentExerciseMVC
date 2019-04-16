@@ -11,7 +11,7 @@ namespace StudentExerciseMVC.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Enter the Cohort Name in the form of Day or Evening with a number.")]
-        [Display(Name = "Cohort Name")]
+        [Display(Name = "Cohort")]
         [StringLength(11, MinimumLength = 5)]
         
         // [RegularExpression(@"(\bday\b|\bDay\b|\bevening\b|\bEvening\b)\s(\b\d{1,2})")]
@@ -21,6 +21,12 @@ namespace StudentExerciseMVC.Models
         public List<Student> ListofStudents { get; set; } = new List<Student>();
 
         [Display(Name = "Instructors in Cohort")]
-        public List<Instructor> ListofInstructors { get; set; } = new List<Instructor>();       
+        public List<Instructor> ListofInstructors { get; set; } = new List<Instructor>();
+
+        public Cohort()
+        {
+            ListofStudents = new List<Student>();
+            ListofInstructors = new List<Instructor>();
+        }
     }
 }
