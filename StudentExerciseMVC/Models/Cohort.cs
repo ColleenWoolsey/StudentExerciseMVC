@@ -9,11 +9,11 @@ namespace StudentExerciseMVC.Models
     public class Cohort
     {
         public int Id { get; set; }
-       
-        [Required]
+
+        [Required(ErrorMessage = "Enter the Cohort Name in the form of Day or Evening with a number.")]
         [Display(Name = "Cohort Name")]
         [StringLength(11, MinimumLength = 5)]
-        // Message "Cohort name should be in the format of [Day|Evening] [number]"
+        
         // [RegularExpression(@"(\bday\b|\bDay\b|\bevening\b|\bEvening\b)\s(\b\d{1,2})")]
         public string CohortName { get; set; }
 

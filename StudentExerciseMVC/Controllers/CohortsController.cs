@@ -252,9 +252,7 @@ namespace StudentExerciseMVC.Controllers
             {
                 Cohort = cohort
             };
-
-            return View(viewModel);
-            
+            return View(viewModel);            
         }
 
         // *********************************
@@ -279,8 +277,7 @@ namespace StudentExerciseMVC.Controllers
                         cmd.ExecuteNonQuery();
                         return RedirectToAction(nameof(Index));
                     }
-                }          
-            
+                }  
             }
             catch
             {
