@@ -10,11 +10,11 @@ namespace StudentExerciseMVC.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Enter the Instructor's First Name.")]
         [Display(Name = "First Name")]
         public string InstructorFirstName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Enter the Instructor's Last Name.")]
         [Display(Name = "Last Name")]
         public string InstructorLastName { get; set; }
 
@@ -27,8 +27,8 @@ namespace StudentExerciseMVC.Models
             }
         }
 
-        [Required]
-        [Display(Name = "SlackHandle")]
+        [Required(ErrorMessage = "Enter the Instructor's Slack Handle.")]
+        [Display(Name = "Slack Handle")]
         [StringLength(20, MinimumLength = 3)]
         public string InstructorSlackHandle { get; set; }
 
