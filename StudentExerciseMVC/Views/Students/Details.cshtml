@@ -28,25 +28,34 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.StudentLastName)
-        </dd>        
+        </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.StudentSlackHandle)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.StudentSlackHandle)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CohortId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CohortId)
-        </dd>
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Cohort.CohortName)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Cohort.CohortName)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ListofExercises)
+        </dt>
+        <ol>
+            @foreach (var item in Model.ListofExercises)
+            {
+                <li>
+                    @Html.DisplayFor(model => item.ExerciseName)
+                    @Html.DisplayFor(model => item.Language)
+                </li>
+            }
+        </ol>
+
+
     </dl>
 </div>
 <div>

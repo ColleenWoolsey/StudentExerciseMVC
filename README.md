@@ -1,38 +1,37 @@
-Student Exercises MVC
+## Welcome to Student Exercises MVC
 
-Your first task for this exercise is to start a new Visual Studio Web Application (MVC) project named StudentExercisesMVC.
-Then make a controller and corresponding Razor templates in order to manage the cohorts for your database.
+A Visual Studio Web Application (MVC) that manages Students, Instructors, Cohorts and Student Assignments.
 
-Use scaffolding to...
+![](GoalFish-Demo.gif)
 
-1. Create a CohortsController in your controllers directory.
-Create a Views > Cohorts directory and use the scaffolding to the create the Index, Details, Create, Edit, and Delete views.
-In your controller, use ADO.NET to execute SQL statements for all of those actions.
-
-
-2. Display a List of Instructors
-Use scaffolding to... Create an InstructorsController in your controllers directory.
-Create a Views > Instructors directory and use the scaffolding to the create the Index, Details, Create, Edit, and Delete views.
-In your controller, use ADO.NET to execute SQL statements for all of those actions.
-When you create or edit an instructor, you should be able to assign the instructor to a cohort from a select element in the form.
+#### 1. Create a CohortsController in your controllers directory.
+* Create a Views > Cohorts directory and use the scaffolding to the create the Index, Details, Create, Edit, and Delete views.
+* In your controller, use ADO.NET to execute SQL statements for all of those actions.
 
 
-3. Display a List of Students
-Use scaffolding to... Create a StudentsController in your controllers directory.
-Create a Views > Students directory and use the scaffolding to the create the Index, Details, Create, Edit, and Delete views.
-In your controller, use ADO.NET to execute SQL statements for all of those actions.
-When you create or edit a student, you should be able to assign the student to a cohort from a select element in the form.
+#### 2. Display a List of Instructors
+* Use scaffolding to... Create an InstructorsController in your controllers directory.
+* Create a Views > Instructors directory and use the scaffolding to the create the Index, Details, Create, Edit, and Delete views.
+* In your controller, use ADO.NET to execute SQL statements for all of those actions.
+* When you create or edit an instructor, you should be able to assign the instructor to a cohort from a select element in the form.
 
 
-4. Display a List of Exercises
-Use scaffolding to... Create an ExercisesController in your controllers directory.
-Create a Views > Exercises directory and use the scaffolding to the create the Index, Details, Create, Edit, and Delete views.
-In your controller, use ADO.NET to execute SQL statements for all of those actions.
+#### 3. Display a List of Students
+* Use scaffolding to... Create a StudentsController in your controllers directory.
+* Create a Views > Students directory and use the scaffolding to the create the Index, Details, Create, Edit, and Delete views.
+* In your controller, use ADO.NET to execute SQL statements for all of those actions.
+* When you create or edit a student, you should be able to assign the student to a cohort from a select element in the form.
 
 
-5. Assigning Exercises to Students
-EDIT - Modify your student edit form to display all exercises in a multi-select element. 
-The user should be able to select one, or more exercises, in that element. When the user submits the form, then the 
-StudentExercises table in your database should have a new entry added for each of the exercises that were selected in the form.
+#### 4. Display a List of Exercises
+* Use scaffolding to... Create an ExercisesController in your controllers directory.
+* Create a Views > Exercises directory and use the scaffolding to the create the Index, Details, Create, Edit, and Delete views.
+* In your controller, use ADO.NET to execute SQL statements for all of those actions.
 
-DETAILS - When you view the details of an individual student, then there should be a list of assigned exercises in the view.
+
+#### 5. Assigning Exercises to Students
+* EDIT - Modify your student edit form to display all exercises in a multi-select element. 
+* The user should be able to select one, or more exercises, in that element. When the user submits the form, then the 
+* StudentExercises table in your database should have a new entry added for each of the exercises that were selected in the form.
+
+* DETAILS - When you view the details of an individual student, then there should be a list of assigned exercises in the view.

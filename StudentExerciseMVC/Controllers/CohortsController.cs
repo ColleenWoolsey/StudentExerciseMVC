@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -172,25 +173,7 @@ namespace StudentExerciseMVC.Controllers
                                     StudentSlackHandle = reader.GetString(reader.GetOrdinal("StudentSlackHandle"))
                                 }
                             );                            
-                        }
-                        // ADDING BOTH LISTS CAUSES DUPLICATE RECORDS
-                        //i.id AS InstructorId, 
-                        //i.InstructorFirstName,
-                        //i.InstructorLastName,
-                        //i.InstructorSlackHandle
-                        //LEFT JOIN Instructor i ON i.CohortId = c.Id
-                        //if (!reader.IsDBNull(reader.GetOrdinal("InstructorId")))
-                        //{
-                        //    cohort.ListofInstructors.Add(
-                        //        new Instructor
-                        //        {
-                        //            Id = reader.GetInt32(reader.GetOrdinal("InstructorId")),
-                        //            InstructorFirstName = reader.GetString(reader.GetOrdinal("InstructorFirstName")),
-                        //            InstructorLastName = reader.GetString(reader.GetOrdinal("InstructorLastName")),
-                        //            InstructorSlackHandle = reader.GetString(reader.GetOrdinal("InstructorSlackHandle"))
-                        //        }
-                        //    );
-                        //}                        
+                        }                                              
                     }
                     
                     reader.Close();
