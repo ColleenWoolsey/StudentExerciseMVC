@@ -4,28 +4,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using StudentExerciseMVC.Models;
+using System.Data.SqlClient;
 
 namespace StudentExerciseMVC.Models.ViewModels
 {
     public class StudentEditViewModel
     {
-        public Student Student { get; set; }
-        public List<Cohort> Cohorts { get; set; }
-        public List<SelectListItem> CohortOptions
+        public StudentEditViewModel()
         {
-            get
-            {
-                if (Cohorts == null)
-                {
-                    return null;
-                }
 
-                return Cohorts.Select(c => new SelectListItem
-                {
-                    Value = c.Id.ToString(),
-                    Text = c.CohortName
-                }).ToList();
-            }
+            ExerciseIntersectionEditViewModel = new ExerciseIntersectionEditViewModel();
+                
+            StudentDataAndCohortEditViewModel = new StudentDataAndCohortEditViewModel();
         }
+
+            public ExerciseIntersectionEditViewModel ExerciseIntersectionEditViewModel { get; set; }
+           
+            public StudentDataAndCohortEditViewModel StudentDataAndCohortEditViewModel { get; set; }
     }
 }

@@ -4,43 +4,81 @@
     ViewData["Title"] = "Edit";
 }
 
+@*<div class="container" style="max-width:1280px;padding:40px 20px;background:#ebeff2">*@
 <h2>Edit</h2>
 
 <h4>Student</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger form-row "></div>
+    <div class="row">
+        <div class="col-md-4">
             <div class="form-group">
-                <label asp-for="Student.StudentFirstName" class="control-label"></label>
-                <input asp-for="Student.StudentFirstName" class="form-control" />
-                <span asp-validation-for="Student.StudentFirstName" class="text-danger"></span>
+                <label asp-for="StudentDataAndCohortEditViewModel.Student.StudentFirstName"
+                       class="control-label"></label>
+                <input asp-for="StudentDataAndCohortEditViewModel.Student.StudentFirstName" class="form-control" />
+                <span asp-validation-for="StudentDataAndCohortEditViewModel.Student.StudentFirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Student.StudentLastName" class="control-label"></label>
-                <input asp-for="Student.StudentLastName" class="form-control" />
-                <span asp-validation-for="Student.StudentLastName" class="text-danger"></span>
+                <label asp-for="StudentDataAndCohortEditViewModel.Student.StudentLastName"
+                       class="control-label"></label>
+                <input asp-for="StudentDataAndCohortEditViewModel.Student.StudentLastName" class="form-control" />
+                <span asp-validation-for="StudentDataAndCohortEditViewModel.Student.StudentLastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Student.StudentSlackHandle" class="control-label"></label>
-                <input asp-for="Student.StudentSlackHandle" class="form-control" />
-                <span asp-validation-for="Student.StudentSlackHandle" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Student.CohortId" class="control-label"></label>
-                <select asp-for="Student.CohortId" asp-items="@Model.CohortOptions"></select>
-                <span asp-validation-for="Student.CohortId" class="text-danger"></span>
+                <label asp-for="StudentDataAndCohortEditViewModel.Student.StudentSlackHandle"
+                       class="control-label"></label>
+                <input asp-for="StudentDataAndCohortEditViewModel.Student.StudentSlackHandle" class="form-control" />
+                <span asp-validation-for="StudentDataAndCohortEditViewModel.Student.StudentSlackHandle" class="text-danger"></span>
             </div>
 
+            <div class="form-group">
+                <label asp-for="StudentDataAndCohortEditViewModel.Student.CohortId"
+                       class="control-label"></label>
+                <select asp-for="StudentDataAndCohortEditViewModel.Student.CohortId"
+                        asp-items="@Model.StudentDataAndCohortEditViewModel.CohortOptions"></select>
+                <span asp-validation-for="StudentDataAndCohortEditViewModel.Student.CohortId" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <h6>Assigned Exercise</h6>
+            <p>(Highlight to Unassign)</p>
+            <div class="form-group">
+                <label asp-for="ExerciseIntersectionEditViewModel.EditedAssignedExercises"
+                       class="control-label"></label>
+                <select asp-for="ExerciseIntersectionEditViewModel.EditedAssignedExercises"
+                        asp-items="@Model.ExerciseIntersectionEditViewModel.AssignedExercisesOptions"></select>
+                <span asp-validation-for="ExerciseIntersectionEditViewModel.EditedAssignedExercises" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <h6>Add Exercise</h6>
+            <p>(Highlight to Assign)</p>
+            <div class="form-group">
+                <label asp-for="ExerciseIntersectionEditViewModel.EditedNotAssignedExercises"
+                       class="control-label"></label>
+                <select asp-for="ExerciseIntersectionEditViewModel.EditedNotAssignedExercises"
+                        asp-items="@Model.ExerciseIntersectionEditViewModel.NotAssignedExercisesOptions"></select>
+                <span asp-validation-for="ExerciseIntersectionEditViewModel.EditedNotAssignedExercises" class="text-danger"></span>
+            </div>
+        </div>
+            
+        <div class="col-md-2">
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
-        </form>
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </div>       
     </div>
-</div>
+</form>
 
+<br />
+<br />
+<hr />
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
