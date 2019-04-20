@@ -2,7 +2,7 @@
 
 A Visual Studio Web Application (MVC) that manages Students, Instructors, Cohorts and Student Assignments.
 
-![](GoalFish-Demo.gif)
+![](Home Page - StudentExerciseMVC - Google Chrome 4_20_2019 1_54_23 PM_Trim.mp4)
 
 #### 1. Create a CohortsController in your controllers directory.
 * Create a Views > Cohorts directory and use the scaffolding to the create the Index, Details, Create, Edit, and Delete views.
