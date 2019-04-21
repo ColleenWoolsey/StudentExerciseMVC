@@ -1,6 +1,6 @@
 ## Welcome to Student Exercises MVC
 
-A Visual Studio Web Application (MVC) that manages Students, Instructors, Cohorts and Student Assignments.
+A Visual Studio Web Application (MVC) that manages Students, Instructors, Cohorts and Student Assignments. There is CRUD for all modules and a list of students in Cohort details. The Edit feature allows the user to change the student's Cohort via a dropdown select. Current exercises can be deleted and new exercises can be selected all in the same edit.
 
 ![](SEMVCDemo.gif)
 
